@@ -8,11 +8,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: "https://ddr-renovations.netlify.app/", // Replace with your actual Netlify URL
-  methods: "POST",
-  allowedHeaders: "Content-Type",
-}));
+app.use(cors());
 app.use(express.json()); // Automatically parse JSON request bodies
 
 // API endpoint to handle contact form submissions
