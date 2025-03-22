@@ -8,7 +8,11 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Allow cross-origin requests (from React frontend)
+app.use(cors({
+  origin: "https://ddr-renovations.netlify.app/", // Replace with your actual Netlify URL
+  methods: "POST",
+  allowedHeaders: "Content-Type",
+}));
 app.use(express.json()); // Automatically parse JSON request bodies
 
 // API endpoint to handle contact form submissions
@@ -48,5 +52,5 @@ app.post('/send-email', async (req, res) => {
 
 // Start the Express server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on ${port}`);
 });
