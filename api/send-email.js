@@ -73,7 +73,7 @@ export default async function handler(req, res) {
   // Email options
   const mailOptions = {
     from: process.env.EMAIL_USER,  // Use your own email to prevent rejection
-    to: "dourodummerrenovations@gmail.com",  // Business email
+    to: "dourodummerrenovation@gmail.com",  // Business email
     subject: `New Contact Form Submission from ${name}`,
     text: `You have received a new message from:\n\n
            Name: ${name}\n
